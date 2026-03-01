@@ -1,17 +1,30 @@
-# tes123
+# Mini Content Sharing App - Flutter Exploration
 
-A new Flutter project.
+Proyek ini adalah hasil eksplorasi mandiri dalam membuat aplikasi mobile sederhana berbasis Flutter untuk berbagi konten gambar (ala Instagram/WhatsApp) menggunakan bantuan Generative AI.
 
-## Getting Started
+## 🚀 Fitur Utama
+* **Ambil Foto:** Mengambil gambar secara langsung melalui integrasi kamera perangkat.
+* **Content Sharing:** Membagikan foto yang telah diambil ke platform lain (WhatsApp, Instagram, Email) melalui fitur native sharing.
+* **UI/UX Modern:** Antarmuka pengguna yang diperhalus dengan tema Navy Blue dan alur interaksi yang intuitif hasil kolaborasi dengan Trae AI.
 
-This project is a starting point for a Flutter application.
+## 🛠️ Teknologi & Library
+* **Framework:** Flutter
+* **Language:** Dart
+* **Library:**
+  * `image_picker`: Untuk akses kamera.
+  * `share_plus`: Untuk fitur sharing konten.
+  * `path_provider`: Untuk manajemen file sementara.
 
-A few resources to get you started if this is your first Flutter project:
+## 📝 Catatan Pengembangan & Troubleshooting
+Proyek ini melalui proses *troubleshooting* yang intensif terkait lingkungan pengembangan di Windows:
+1. **Relokasi SDK:** Mengatasi error build akibat karakter spasi pada path direktori user dengan memindahkan Flutter SDK ke `C:\flutter`.
+2. **Environment Path:** Konfigurasi ulang System Environment Variables agar perintah `flutter` dapat dikenali secara global.
+3. **Build Optimization:** Penggunaan perintah `flutter clean` secara berkala untuk memastikan konsistensi cache build di direktori baru.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 🎨 Proses Desain (AI Assisted)
+Proses pengembangan menggunakan pendekatan **AI-Augmented Development**:
+* **Generative AI:** Digunakan untuk menyusun logika dasar dan penanganan error sistem.
+* **Trae AI:** Digunakan untuk penyempurnaan UI/UX, penyesuaian tema warna, dan desain alur pengguna ala media sosial modern.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+*Dibuat untuk memenuhi tugas Eksplorasi Mandiri - MyITS Classroom.*
