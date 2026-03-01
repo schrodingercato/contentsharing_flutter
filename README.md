@@ -1,30 +1,57 @@
-# Mini Content Sharing App - Flutter Exploration
+# contentsharing_flutter
 
-Proyek ini adalah hasil eksplorasi mandiri dalam membuat aplikasi mobile sederhana berbasis Flutter untuk berbagi konten gambar (ala Instagram/WhatsApp) menggunakan bantuan Generative AI.
+Aplikasi Flutter sederhana bergaya Instagram/WhatsApp/TikTok untuk mengambil/memilih gambar, melihat feed (FYP), mengelola kontak ringan, dan membagikan konten melalui lembar berbagi sistem.
 
-## 🚀 Fitur Utama
-* **Ambil Foto:** Mengambil gambar secara langsung melalui integrasi kamera perangkat.
-* **Content Sharing:** Membagikan foto yang telah diambil ke platform lain (WhatsApp, Instagram, Email) melalui fitur native sharing.
-* **UI/UX Modern:** Antarmuka pengguna yang diperhalus dengan tema Navy Blue dan alur interaksi yang intuitif hasil kolaborasi dengan Trae AI.
+## Highlights
+- Tema navy gelap yang modern dengan gradasi pada AppBar.
+- Tab navigasi:
+  - FYP: feed vertikal ala TikTok/Instagram (dummy, berbasis warna gradasi).
+  - Kamera: ambil foto dari kamera.
+  - Galeri: pilih gambar dari galeri.
+  - Chats: daftar kontak, tambah kontak (nama, nomor HP, kategori), kirim konten.
+- Berbagi konten via share sheet native (WhatsApp, Instagram, DM, dll.) menggunakan `share_plus`.
+- Menggunakan `image_picker` untuk akses kamera/galeri.
 
-## 🛠️ Teknologi & Library
-* **Framework:** Flutter
-* **Language:** Dart
-* **Library:**
-  * `image_picker`: Untuk akses kamera.
-  * `share_plus`: Untuk fitur sharing konten.
-  * `path_provider`: Untuk manajemen file sementara.
+## Cuplikan Fitur
+- Ambil/Pilih Gambar: pratinjau langsung di tab Kamera/Galeri.
+- Kirim ke Kontak: pilih kontak di tab Chats, ubah gambar dari sheet jika perlu, lalu “Kirim”.
+- FYP: geser vertikal untuk melihat postingan orang lain (mock), tombol like/comment/share tersedia.
 
-## 📝 Catatan Pengembangan & Troubleshooting
-Proyek ini melalui proses *troubleshooting* yang intensif terkait lingkungan pengembangan di Windows:
-1. **Relokasi SDK:** Mengatasi error build akibat karakter spasi pada path direktori user dengan memindahkan Flutter SDK ke `C:\flutter`.
-2. **Environment Path:** Konfigurasi ulang System Environment Variables agar perintah `flutter` dapat dikenali secara global.
-3. **Build Optimization:** Penggunaan perintah `flutter clean` secara berkala untuk memastikan konsistensi cache build di direktori baru.
+## Teknologi
+- Flutter (Material 3).
+- Paket:
+  - [`image_picker`](https://pub.dev/packages/image_picker): kamera/galeri.
+  - [`share_plus`](https://pub.dev/packages/share_plus): berbagi ke aplikasi lain.
 
-## 🎨 Proses Desain (AI Assisted)
-Proses pengembangan menggunakan pendekatan **AI-Augmented Development**:
-* **Generative AI:** Digunakan untuk menyusun logika dasar dan penanganan error sistem.
-* **Trae AI:** Digunakan untuk penyempurnaan UI/UX, penyesuaian tema warna, dan desain alur pengguna ala media sosial modern.
+## Struktur Utama
+```
+lib/
+└─ main.dart        // Seluruh UI & flow (FYP, Kamera, Galeri, Chats)
+```
 
----
-*Dibuat untuk memenuhi tugas Eksplorasi Mandiri - MyITS Classroom.*
+## Menjalankan (Android Studio/Emulator)
+1. Buka folder proyek ini di Android Studio.
+2. Jalankan:
+   - Get dependencies: `flutter pub get`
+   - Run di emulator Android: `flutter run`
+
+> Catatan: Proyek sudah menyertakan izin dasar Android untuk kamera. Tidak ada penambahan konfigurasi selain dependensi standar Flutter.
+
+## Izin Android
+- `android.permission.CAMERA` untuk mengambil foto.
+- (Opsional, tergantung OS) akses penyimpanan sesuai kebijakan Android versi target.
+
+## Alur Pengguna
+1. Masuk ke tab Kamera/Galeri untuk memilih gambar.
+2. Jika sudah ada gambar terpilih, tombol aksi dan footer memudahkan pindah ke Chats.
+3. Di tab Chats:
+   - Tekan “Tambah Kontak” untuk menambahkan nama, nomor HP, dan kategori.
+   - Ketuk kontak untuk membuka sheet compose, lalu kirim melalui share sheet.
+4. Tab FYP menampilkan feed vertikal sebagai inspirasi tampilan explore.
+
+## Penyesuaian
+- Ubah daftar kontak awal, warna feed, atau teks caption dummy di `lib/main.dart`.
+- Mudah diekstensikan ke backend/API untuk FYP dan daftar kontak nyata.
+
+## Lisensi
+Proyek ini ditujukan sebagai contoh pembelajaran/poc. Silakan gunakan dan modifikasi sesuai kebutuhan.
